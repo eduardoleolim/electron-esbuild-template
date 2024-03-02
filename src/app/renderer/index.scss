@@ -1,0 +1,43 @@
+@use '@material/web/color/color';
+@use './shared/css/my-theme.scss';
+
+@import url('./shared/fonts');
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    @include my-theme.darkTheme;
+  }
+
+  @media (prefers-color-scheme: light) {
+    @include my-theme.lightTheme;
+  }
+
+  --my-brand-font: 'Open Sans';
+  --my-headline-font: 'Montserrat';
+  --my-title-font: 'Montserrat';
+  --my-plain-font: system-ui;
+
+  --md-ref-typeface-brand: var(--my-brand-font);
+  --md-ref-typeface-plain: var(--my-plain-font);
+
+  --md-sys-typescale-headline-font: var(--my-headline-font);
+  --md-sys-typescale-title-font: var(--my-title-font);
+
+  font-family: var(--my-plain-font);
+}
+
+#root {
+  margin: 0%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}

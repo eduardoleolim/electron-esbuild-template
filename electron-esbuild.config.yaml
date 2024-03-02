@@ -1,0 +1,31 @@
+output: dist
+main:
+  entry: src/app/main.ts
+  output:
+    directory: main
+    filename: main.js
+  preloads:
+    - entry: src\app\main\mainWindow\Preload.ts
+      reload: true
+      output:
+        directory: main
+        filename: preload.js
+renderers:
+  devPort: 9080
+  entry: src/app/renderer/index.tsx
+  html: src/app/renderer/index.html
+  esbuild: ./electron-esbuild.renderer.mjs
+  output:
+    directory: renderer
+    filename: renderer.js
+  loaders:
+    - extension: '.svg'
+      loader: dataurl
+    - extension: '.woff'
+      loader: file
+    - extension: '.woff2'
+      loader: file
+    - extension: '.ttf'
+      loader: file
+    - extension: '.eot'
+      loader: file

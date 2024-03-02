@@ -1,0 +1,36 @@
+{
+  "name": "electron-esbuild-template",
+  "version": "1.0.0",
+  "description": "Template Electron with Typescript",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-esbuild build",
+    "dev": "electron-esbuild dev --clean",
+    "prettier": "prettier --config .prettierrc ./src --write"
+  },
+  "keywords": [
+    "electron",
+    "Typescript",
+    "esbuild",
+    "React",
+    "Material Web"
+  ],
+  "author": "Ángel Eduardo Martínez Leo Lim",
+  "license": "ISC",
+  "devDependencies": {
+    "@eduardoleolim/electron-esbuild": "2.7.3",
+    "@lit/react": "1.0.3",
+    "@material/web": "1.3.0",
+    "@types/react": "18.2.61",
+    "@types/react-dom": "18.2.19",
+    "electron": "29.1.0",
+    "esbuild": "0.20.x",
+    "esbuild-sass-plugin": "3.1.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
