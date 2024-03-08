@@ -5,7 +5,7 @@ main:
     directory: main
     filename: main.js
   preloads:
-    - entry: src\app\main\mainWindow\Preload.ts
+    - entry: src/app/main/mainWindow/Preload.ts
       reload: true
       output:
         directory: main
