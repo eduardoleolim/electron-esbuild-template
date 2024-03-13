@@ -12,7 +12,7 @@ export class OrderType extends EnumValueObject<OrderTypes> {
     super(value, Object.values(OrderTypes));
   }
 
-  static fromValue(value: string): OrderType {
+  public static fromValue(value: string): OrderType {
     switch (value) {
       case OrderTypes.ASC:
         return new OrderType(OrderTypes.ASC);

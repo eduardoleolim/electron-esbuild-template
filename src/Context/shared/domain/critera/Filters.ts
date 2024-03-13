@@ -7,9 +7,9 @@ enum FiltersOperator {
 }
 
 export abstract class Filters {
-  abstract isEmpty(): boolean;
+  public abstract isEmpty(): boolean;
 
-  abstract serialize(): string;
+  public abstract serialize(): string;
 }
 
 export class EmptyFilters extends Filters {
@@ -38,7 +38,7 @@ export class SingleFilter extends Filters {
     return this.filter.serialize();
   }
 
-  static equal(field: string, value: string): SingleFilter {
+  public static equal(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.EQUAL);
@@ -47,7 +47,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static notEqual(field: string, value: string): SingleFilter {
+  public static notEqual(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.NOT_EQUAL);
@@ -56,7 +56,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static gt(field: string, value: string): SingleFilter {
+  public static gt(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.GT);
@@ -65,7 +65,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static gte(field: string, value: string): SingleFilter {
+  public static gte(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.GTE);
@@ -74,7 +74,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static lt(field: string, value: string): SingleFilter {
+  public static lt(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.LT);
@@ -83,7 +83,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static lte(field: string, value: string): SingleFilter {
+  public static lte(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.LTE);
@@ -92,7 +92,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static contains(field: string, value: string): SingleFilter {
+  public static contains(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.CONTAINS);
@@ -101,7 +101,7 @@ export class SingleFilter extends Filters {
     return new SingleFilter(Filter.fromValues(map));
   }
 
-  static notContains(field: string, value: string): SingleFilter {
+  public static notContains(field: string, value: string): SingleFilter {
     const map = new Map<string, string>();
     map.set('field', field);
     map.set('operator', Operator.NOT_CONTAINS);

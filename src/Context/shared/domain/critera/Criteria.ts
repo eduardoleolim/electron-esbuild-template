@@ -22,11 +22,11 @@ export class Criteria {
     return !this.orders.isEmpty();
   }
 
-  serialize(): string {
+  public serialize(): string {
     return `Criteria(${this.filters.serialize()},${this.orders.serialize()},${this.limit ?? '_'},${this.offset ?? '_'})`;
   }
 
-  static empty(): Criteria {
+  public static empty(): Criteria {
     return new Criteria(new EmptyFilters(), Orders.none());
   }
 }

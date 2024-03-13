@@ -11,15 +11,15 @@ export class Orders {
     return this.orders.length === 0;
   }
 
-  serialize(): string {
+  public serialize(): string {
     return `(${this.orders.map((order) => order.serialize()).join(',')})`;
   }
 
-  static fromValues(orders: Array<Map<string, string>>): Orders {
+  public static fromValues(orders: Array<Map<string, string>>): Orders {
     return new Orders(orders.map((value) => Order.fromValues(value.get('orderBy'), value.get('orderType'))));
   }
 
-  static none(): Orders {
+  public static none(): Orders {
     return new Orders([Order.none()]);
   }
 }

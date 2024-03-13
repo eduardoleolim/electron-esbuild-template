@@ -2,15 +2,23 @@ import { OrderBy } from './OrderBy';
 import { OrderType, OrderTypes } from './OrderType';
 
 export class Order {
-  readonly orderBy: OrderBy;
-  readonly orderType: OrderType;
+  readonly _orderBy: OrderBy;
+  readonly _orderType: OrderType;
 
   constructor(orderBy: OrderBy, orderType: OrderType) {
-    this.orderBy = orderBy;
-    this.orderType = orderType;
+    this._orderBy = orderBy;
+    this._orderType = orderType;
   }
 
-  static fromValues(orderBy?: string, orderType?: string): Order {
+  public orderBy(): string {
+    return this._orderBy.value;
+  }
+
+  public orderType(): string {
+    return this._orderType.value;
+  }
+
+  public static fromValues(orderBy?: string, orderType?: string): Order {
     if (!orderBy) {
       return Order.none();
     }
@@ -18,23 +26,23 @@ export class Order {
     return new Order(new OrderBy(orderBy), OrderType.fromValue(orderType || OrderTypes.ASC));
   }
 
-  static none(): Order {
+  public static none(): Order {
     return new Order(new OrderBy(''), new OrderType(OrderTypes.NONE));
   }
 
-  static desc(orderBy: string): Order {
+  public static desc(orderBy: string): Order {
     return new Order(new OrderBy(orderBy), new OrderType(OrderTypes.DESC));
   }
 
-  static asc(orderBy: string): Order {
+  public static asc(orderBy: string): Order {
     return new Order(new OrderBy(orderBy), new OrderType(OrderTypes.ASC));
   }
 
   public hasOrder() {
-    return !this.orderType.isNone();
+    return !this._orderType.isNone();
   }
 
   public serialize(): string {
-    return `[${this.orderBy.value}>>${this.orderType.value}]`;
+    return `[${this._orderBy.value}>>${this._orderType.value}]`;
   }
 }

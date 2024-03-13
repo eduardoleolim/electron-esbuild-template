@@ -17,7 +17,7 @@ export class FilterOperator extends EnumValueObject<Operator> {
     super(value, Object.values(Operator));
   }
 
-  static fromValue(value: string): FilterOperator {
+  public static fromValue(value: string): FilterOperator {
     switch (value) {
       case Operator.EQUAL:
         return new FilterOperator(Operator.EQUAL);

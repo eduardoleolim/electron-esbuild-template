@@ -1,24 +1,36 @@
 import { InvalidArgumentError } from '../value-object/InvalidArgumentError';
 import { FilterField } from './FilterField';
-import { FilterOperator } from './FilterOperator';
+import { FilterOperator, Operator } from './FilterOperator';
 import { FilterValue } from './FilterValue';
 
 export class Filter {
-  readonly field: FilterField;
-  readonly operator: FilterOperator;
-  readonly value: FilterValue;
+  private readonly _field: FilterField;
+  private readonly _operator: FilterOperator;
+  private readonly _value: FilterValue;
 
   constructor(field: FilterField, operator: FilterOperator, value: FilterValue) {
-    this.field = field;
-    this.operator = operator;
-    this.value = value;
+    this._field = field;
+    this._operator = operator;
+    this._value = value;
+  }
+
+  public field() : string {
+    return this._field.value;
+  }
+
+  public operator(): Operator {
+    return this._operator.value;
+  }
+
+  public value(): string {
+    return this._value.value;
   }
 
   public serialize(): string {
-    return `<${this.field.value}${this.operator.value}${this.value.value}>`;
+    return `<${this._field.value}${this._operator.value}${this._value.value}>`;
   }
 
-  static fromValues(values: Map<string, string>): Filter {
+  public static fromValues(values: Map<string, string>): Filter {
     const field = values.get('field');
     const operator = values.get('operator');
     const value = values.get('value');
