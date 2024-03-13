@@ -14,7 +14,7 @@ export class Filter {
     this._value = value;
   }
 
-  public field() : string {
+  public field(): string {
     return this._field.value;
   }
 
