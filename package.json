@@ -8,7 +8,8 @@
     "start": "electron .",
     "build": "electron-esbuild build",
     "dev": "electron-esbuild dev --clean",
-    "prettier": "prettier --config .prettierrc ./src --write"
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix"
   },
   "keywords": [
     "Electron",
@@ -44,8 +45,7 @@
   },
   "ts-standard": {
     "ignore": [
-      "dist",
-      "node_modules"
+      "dist"
     ]
   }
 }
