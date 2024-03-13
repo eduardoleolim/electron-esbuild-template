@@ -1,5 +1,5 @@
-import React, { CSSProperties } from 'react';
-import { Column, Row } from './shared/components/layouts';
+import React, { CSSProperties } from 'react'
+import { Column, Row } from './shared/components/layouts'
 import {
   Checkbox,
   ElevatedButton,
@@ -10,24 +10,24 @@ import {
   OutlinedButton,
   Radio,
   TextButton
-} from './shared/components/material3';
+} from './shared/components/material3'
 
-export function PageTwo() {
+export function PageTwo (): React.JSX.Element {
   const headerStyle: CSSProperties = {
     verticalAlign: 'middle'
-  };
+  }
 
   const sectionStyle: CSSProperties = {
     marginTop: '20px',
     marginBottom: '20px',
     gap: 20,
     justifyContent: 'center'
-  };
+  }
 
   return (
     <Column style={{ margin: '5%' }}>
       <Row style={headerStyle}>
-        <IconButton href="#/">
+        <IconButton href='#/'>
           <Icon>arrow_back</Icon>
         </IconButton>
         <h1>Material Web components</h1>
@@ -47,16 +47,16 @@ export function PageTwo() {
           <h3>Checkbox</h3>
           <Column style={sectionStyle}>
             <div>
-              <Checkbox id="cbxCarrots" name="vegetables" value="carrots" />
-              <label htmlFor="cbxCarrots">Carrots</label>
+              <Checkbox id='cbxCarrots' name='vegetables' value='carrots' />
+              <label htmlFor='cbxCarrots'>Carrots</label>
             </div>
             <div>
-              <Checkbox id="cbxPeas" name="vegetables" value="peas" />
-              <label htmlFor="cbxPeas">Peas</label>
+              <Checkbox id='cbxPeas' name='vegetables' value='peas' />
+              <label htmlFor='cbxPeas'>Peas</label>
             </div>
             <div>
-              <Checkbox id="cbxPotatoes" name="vegetables" value="potatoes" />
-              <label htmlFor="cbxPotatoes">Potatoes</label>
+              <Checkbox id='cbxPotatoes' name='vegetables' value='potatoes' />
+              <label htmlFor='cbxPotatoes'>Potatoes</label>
             </div>
           </Column>
         </Column>
@@ -64,22 +64,22 @@ export function PageTwo() {
           <h3>Radio</h3>
           <Column style={sectionStyle}>
             <div>
-              <Radio id="carRadio" name="animals" value="Cat"></Radio>
-              <label htmlFor="carRadio">Cats</label>
+              <Radio id='carRadio' name='animals' value='Cat' />
+              <label htmlFor='carRadio'>Cats</label>
             </div>
 
             <div>
-              <Radio id="dogRadio" name="animals" value="Dog"></Radio>
-              <label htmlFor="dogRadio">Dogs</label>
+              <Radio id='dogRadio' name='animals' value='Dog' />
+              <label htmlFor='dogRadio'>Dogs</label>
             </div>
 
             <div>
-              <Radio id="birdRadio" name="animals" value="Bird"></Radio>
-              <label htmlFor="birdRadio">Birds</label>
+              <Radio id='birdRadio' name='animals' value='Bird' />
+              <label htmlFor='birdRadio'>Birds</label>
             </div>
           </Column>
         </Column>
       </Row>
     </Column>
-  );
+  )
 }

@@ -1,27 +1,27 @@
-import { App } from 'electron/main';
-import { MainWindow } from './mainWindow/MainWindow';
+import { App } from 'electron/main'
+import { MainWindow } from './mainWindow/MainWindow'
 
 export class ElectronApp {
-  private readonly app: App;
-  private readonly mainWindow: MainWindow;
+  private readonly app: App
+  private readonly mainWindow: MainWindow
 
-  constructor(app: App) {
+  constructor (app: App) {
     if (!app.isReady()) {
-      throw new Error('ElectronApp can only be created after app is ready');
+      throw new Error('ElectronApp can only be created after app is ready')
     }
 
-    this.app = app;
+    this.app = app
 
     this.app.on('window-all-closed', () => {
       if (process.platform !== 'darwin') {
-        this.app.quit();
+        this.app.quit()
       }
-    });
+    })
 
-    this.mainWindow = new MainWindow();
+    this.mainWindow = new MainWindow()
   }
 
-  public async init() {
-    await this.mainWindow.show();
+  public async init (): Promise<void> {
+    await this.mainWindow.show()
   }
 }

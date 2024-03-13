@@ -1,7 +1,15 @@
-import { StringValueObject } from '../value-object/StringValueObject';
+import { InvalidArgumentError } from '../InvalidArgumentError'
+import { StringValueObject } from '../value-object/StringValueObject'
 
 export class OrderBy extends StringValueObject {
-  constructor(value: string) {
-    super(value);
+  constructor (value: string) {
+    super(value)
+    this.ensureValueIsNotEmpty(value)
+  }
+
+  private ensureValueIsNotEmpty (value: string): void {
+    if (value.trim() === '') {
+      throw new InvalidArgumentError('Value must be defined')
+    }
   }
 }

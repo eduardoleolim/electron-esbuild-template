@@ -1,22 +1,14 @@
-import React, { CSSProperties } from 'react';
-import { Column } from './shared/components/layouts';
-import { FilledButton } from './shared/components/material3';
+import React, { CSSProperties } from 'react'
+import { Column } from './shared/components/layouts'
+import { FilledButton } from './shared/components/material3'
 
-export function PageOne() {
+export function PageOne (): React.JSX.Element {
   const style: CSSProperties = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
     width: '100vw'
-  };
-
-  const infoStyle: CSSProperties = {
-    marginTop: '30px',
-    marginBottom: '30px',
-    marginRight: '15%',
-    marginLeft: '15%',
-    textAlign: 'center'
-  };
+  }
 
   return (
     <Column style={style}>
@@ -24,7 +16,7 @@ export function PageOne() {
 
       <p>Welcome to your Electron React app!</p>
 
-      <FilledButton href="#/examples">Material Web Examples</FilledButton>
+      <FilledButton href='#/examples'>Material Web Examples</FilledButton>
     </Column>
-  );
+  )
 }

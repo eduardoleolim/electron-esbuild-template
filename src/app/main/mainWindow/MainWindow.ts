@@ -1,10 +1,10 @@
-import { BrowserWindow } from 'electron/main';
-import * as path from 'path';
+import { BrowserWindow } from 'electron/main'
+import * as path from 'path'
 
 export class MainWindow extends BrowserWindow {
-  private readonly URL: string;
+  private readonly URL: string
 
-  constructor() {
+  constructor () {
     super({
       width: 800,
       height: 600,
@@ -13,22 +13,22 @@ export class MainWindow extends BrowserWindow {
         nodeIntegration: true,
         preload: path.join(__dirname, 'preload.js')
       }
-    });
+    })
 
     if (process.env.NODE_ENV === 'development') {
-      this.URL = 'http://localhost:9080';
+      this.URL = 'http://localhost:9080'
     } else {
-      this.URL = `file://${path.resolve(__dirname, '../renderer/index.html')}`;
+      this.URL = `file://${path.resolve(__dirname, '../renderer/index.html')}`
     }
 
-    this.setMenu(null);
+    this.setMenu(null)
   }
 
-  async show(): Promise<void> {
-    await this.loadURL(this.URL);
-    super.show();
+  async show (): Promise<void> {
+    await this.loadURL(this.URL)
+    super.show()
     if (process.env.NODE_ENV === 'development') {
-      this.webContents.openDevTools();
+      this.webContents.openDevTools()
     }
   }
 }

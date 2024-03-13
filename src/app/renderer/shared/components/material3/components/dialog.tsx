@@ -1,7 +1,7 @@
-import { createComponent } from '@lit/react';
-import { MdDialog } from '@material/web/dialog/dialog';
-import React from 'react';
-export { MdDialog };
+import { createComponent } from '@lit/react'
+import { MdDialog } from '@material/web/dialog/dialog'
+import React from 'react'
+export { MdDialog }
 
 export const Dialog = createComponent({
   react: React,
@@ -14,4 +14,4 @@ export const Dialog = createComponent({
     onOpened: 'opened',
     onCancel: 'cancel'
   }
-});
+})

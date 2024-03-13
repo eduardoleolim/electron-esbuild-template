@@ -1,7 +1,7 @@
-import { createComponent } from '@lit/react';
-import { MdCheckbox } from '@material/web/checkbox/checkbox';
-import React from 'react';
-export { MdCheckbox };
+import { createComponent } from '@lit/react'
+import { MdCheckbox } from '@material/web/checkbox/checkbox'
+import React from 'react'
+export { MdCheckbox }
 
 export const Checkbox = createComponent({
   react: React,
@@ -10,4 +10,4 @@ export const Checkbox = createComponent({
   events: {
     onChange: 'change'
   }
-});
+})
