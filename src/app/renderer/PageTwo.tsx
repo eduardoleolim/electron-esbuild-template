@@ -11,7 +11,6 @@ import {
   Radio,
   TextButton
 } from './shared/components/material3';
-import "@material/web/field/filled-field"
 
 export function PageTwo() {
   const headerStyle: CSSProperties = {
@@ -22,7 +21,7 @@ export function PageTwo() {
     marginTop: '20px',
     marginBottom: '20px',
     gap: 20,
-    justifyContent: "center"
+    justifyContent: 'center'
   };
 
   return (
@@ -48,16 +47,16 @@ export function PageTwo() {
           <h3>Checkbox</h3>
           <Column style={sectionStyle}>
             <div>
-              <Checkbox id='cbxCarrots' name='vegetables' value='carrots'/>
-              <label htmlFor='cbxCarrots'>Carrots</label>
+              <Checkbox id="cbxCarrots" name="vegetables" value="carrots" />
+              <label htmlFor="cbxCarrots">Carrots</label>
             </div>
             <div>
-              <Checkbox id='cbxPeas' name='vegetables' value='peas'/>
-              <label htmlFor='cbxPeas'>Peas</label>
+              <Checkbox id="cbxPeas" name="vegetables" value="peas" />
+              <label htmlFor="cbxPeas">Peas</label>
             </div>
             <div>
-              <Checkbox id='cbxPotatoes' name='vegetables' value='potatoes'/>
-              <label htmlFor='cbxPotatoes'>Potatoes</label>
+              <Checkbox id="cbxPotatoes" name="vegetables" value="potatoes" />
+              <label htmlFor="cbxPotatoes">Potatoes</label>
             </div>
           </Column>
         </Column>
@@ -65,17 +64,17 @@ export function PageTwo() {
           <h3>Radio</h3>
           <Column style={sectionStyle}>
             <div>
-              <Radio id='carRadio' name="animals" value='Cat'></Radio>
+              <Radio id="carRadio" name="animals" value="Cat"></Radio>
               <label htmlFor="carRadio">Cats</label>
             </div>
 
             <div>
-              <Radio id='dogRadio' name="animals" value='Dog'></Radio>
+              <Radio id="dogRadio" name="animals" value="Dog"></Radio>
               <label htmlFor="dogRadio">Dogs</label>
-              </div>
+            </div>
 
             <div>
-              <Radio id='birdRadio' name="animals" value='Bird'></Radio>
+              <Radio id="birdRadio" name="animals" value="Bird"></Radio>
               <label htmlFor="birdRadio">Birds</label>
             </div>
           </Column>
