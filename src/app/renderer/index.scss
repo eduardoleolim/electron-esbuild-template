@@ -1,7 +1,7 @@
 @use '@material/web/color/color';
 @use './shared/css/my-theme.scss';
 
-@import url('./shared/fonts');
+@import url('./shared/css/fonts.scss');
 
 :root {
   @media (prefers-color-scheme: dark) {
