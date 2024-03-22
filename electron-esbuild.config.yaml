@@ -4,12 +4,13 @@ main:
   output:
     directory: main
     filename: main.js
-  preloads:
-    - entry: src/app/main/mainWindow/Preload.ts
-      reload: true
-      output:
-        directory: main
-        filename: preload.js
+preloads:
+  - entry: src/app/main/mainWindow/Preload.ts
+    renderers: [0]
+    reload: true
+    output:
+      directory: main
+      filename: preload.js
 renderers:
   devPort: 9080
   entry: src/app/renderer/index.tsx
